@@ -1,0 +1,4 @@
+VS Code Extensions Used:
+- Prettier
+- ES Lint
+- VS Code Icons (for prettiness)

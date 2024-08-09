@@ -1,7 +1,7 @@
 {
   "extends": ["eslint:recommended", "prettier"],
   "plugins": [],
-  "parseOptions": {
+  "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {

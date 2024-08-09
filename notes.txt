@@ -9,3 +9,10 @@ Useful Hotkeys:
 ctrl+`    open terminal
 cmd+D     select other text elements like current selection
 cmd+K     during cmd+D selection, skip the next like text
+
+Commands:
+---------
+- When running a package.json command, such as 'npm run lint', 
+  if you want to pass additional args to the ESLint command
+  rather than the npm command, you can do it like this:
+  npm run lint -- --debug

@@ -1,9 +1,30 @@
+const Pet = (props) => {
+  return React.createElement('div', {}, [
+    React.createElement('h1', {}, props.name),
+    React.createElement('h2', {}, props.animal),
+    React.createElement('h2', {}, props.breed),
+  ]);
+};
+
 const App = () => {
-  return React.createElement(
-    'div',
-    {},
+  return React.createElement('div', {}, [
     React.createElement('h1', {}, 'Adopt Me!'),
-  );
+    React.createElement(Pet, {
+      animal: 'Cat',
+      name: 'Bean',
+      breed: 'Bombay',
+    }),
+    React.createElement(Pet, {
+      animal: 'Cat',
+      name: 'CatKit',
+      breed: 'Tabby',
+    }),
+    React.createElement(Pet, {
+      animal: 'Cat',
+      name: 'Lily',
+      breed: 'Domestic Mixed Breed Shorthair',
+    }),
+  ]);
 };
 
 const container = document.getElementById('root');

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const ANIMALS = ['Dog', 'Cat', 'Bird', 'Rabbit', 'Turtle', 'Snake'];
-const breeds = [];
+const breeds = ['Poodle'];
 
 function SearchParams() {
   const [location, setLocation] = useState('');
@@ -29,7 +29,10 @@ function SearchParams() {
           <select
             id="animal"
             value={animal}
-            onChange={(e) => setAnimal(e.target.value)}
+            onChange={(e) => {
+              setAnimal(e.target.value);
+              setBreed('');
+            }}
           >
             <option />
             {ANIMALS.map((animal) => (

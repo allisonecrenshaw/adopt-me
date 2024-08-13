@@ -6,9 +6,10 @@ VS Code Extensions Used:
 
 Useful Hotkeys: 
 ---------------
-ctrl+`    open terminal
-cmd+D     select other text elements like current selection
-cmd+K     during cmd+D selection, skip the next like text
+ctrl+`      open terminal
+cmd+D       select other text elements like current selection
+cmd+K       during cmd+D selection, skip the next like text
+cmd+opt+j   open chrome dev tools console
 
 Commands:
 ---------
@@ -16,3 +17,9 @@ Commands:
   if you want to pass additional args to the ESLint command
   rather than the npm command, you can do it like this:
   npm run lint -- --debug
+
+
+  Info
+  -----
+  - Render functions should be stateless to prevent side effects
+  - State inside of a function comes from hooks

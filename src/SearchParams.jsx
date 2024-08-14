@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Pet from './Pet';
 
-const ANIMALS = ['Dog', 'Cat', 'Bird', 'Rabbit', 'Turtle', 'Snake'];
+const ANIMALS = ['dog', 'cat', 'bird', 'rabbit', 'reptile'];
 
 const SearchParams = () => {
   const [pets, setPets] = useState([]);
@@ -12,17 +12,14 @@ const SearchParams = () => {
 
   useEffect(() => {
     requestPets();
-  }, []);
+  }, [animal]);
 
   async function requestPets() {
-    const result = await fetch(
-      `http://pets-v2.dev-apis.com/pets?` +
-        `animal=${animal}` +
-        `&location=${location}` +
-        `&breed=${breed}`,
+    const res = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
     );
+    const json = await res.json();
 
-    const json = await result.json();
     setPets(json.pets);
   }
 
@@ -54,7 +51,9 @@ const SearchParams = () => {
           >
             <option />
             {ANIMALS.map((animal) => (
-              <option key={animal}>{animal}</option>
+              <option key={animal} value={animal}>
+                {animal}
+              </option>
             ))}
           </select>
         </label>
@@ -69,7 +68,9 @@ const SearchParams = () => {
           >
             <option />
             {breeds.map((breed) => (
-              <option key={breed}>{breed}</option>
+              <option key={breed} value={breed}>
+                {breed}
+              </option>
             ))}
           </select>
         </label>
